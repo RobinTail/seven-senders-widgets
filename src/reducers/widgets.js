@@ -1,8 +1,15 @@
 import {localStorageDecorator} from './local-storage-decorator';
 import {actionTypes} from '../constants/action-types';
 
+/**
+ * {id, languageCode, name}
+ * @todo: remove samples
+ */
 const initialState = {
-  list: [{id: 1, languageCode: 'en', name: 'test'}] // {id, languageCode, name} todo: remove sample
+  list: [
+    {id: 1, languageCode: 'en', name: 'test'},
+    {id: 2, languageCode: 'ru', name: 'test2'}
+  ]
 }
 
 export const widgetsReducer = localStorageDecorator(
