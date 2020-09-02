@@ -10,7 +10,7 @@ const initialState = {
     {id: 1, languageCode: 'en', name: 'test'},
     {id: 2, languageCode: 'ru', name: 'test2'}
   ]
-}
+};
 
 export const widgetsReducer = localStorageDecorator(
   'widgets',
@@ -35,4 +35,4 @@ export const widgetsReducer = localStorageDecorator(
         return state;
     }
   }
-)
+);

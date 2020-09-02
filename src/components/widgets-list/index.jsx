@@ -40,7 +40,7 @@ class WidgetsList extends React.Component {
           <ListDescription>{getLanguageTitle(widget.languageCode)}</ListDescription>
         </ListContent>
       </ListItem>
-    ))
+    ));
   }
 
   render() {
