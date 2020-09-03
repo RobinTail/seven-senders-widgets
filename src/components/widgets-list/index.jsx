@@ -58,7 +58,11 @@ class WidgetsList extends React.Component {
         <List relaxed>
           {this.renderItems()}
         </List>
-        <Modal open={this.props.isModalOpen} size='small'>
+        <Modal
+          open={this.props.isModalOpen}
+          size='small'
+          onClose={this.onCancelRemoveWidgetClick.bind(this)}
+        >
           <Modal.Header>Delete widget</Modal.Header>
           <Modal.Content>Are you sure you want to delete this widget?</Modal.Content>
           <Modal.Actions>
