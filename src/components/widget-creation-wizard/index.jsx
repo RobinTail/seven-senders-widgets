@@ -8,9 +8,6 @@ import Header from 'semantic-ui-react/dist/commonjs/elements/Header';
 import Icon from 'semantic-ui-react/dist/commonjs/elements/Icon';
 import Segment from 'semantic-ui-react/dist/commonjs/elements/Segment';
 import Step from 'semantic-ui-react/dist/commonjs/elements/Step';
-import StepContent from 'semantic-ui-react/dist/commonjs/elements/Step/StepContent';
-import StepGroup from 'semantic-ui-react/dist/commonjs/elements/Step/StepGroup';
-import StepTitle from 'semantic-ui-react/dist/commonjs/elements/Step/StepTitle';
 import styled from 'styled-components';
 import * as uniqid from 'uniqid';
 import {
@@ -107,20 +104,20 @@ class WidgetCreationWizard extends React.Component {
         <Header textAlign='center' size='large'>Add widget</Header>
         <Container text>
           <Segment>
-            <StepGroup size='small' fluid>
+            <Step.Group size='small' fluid>
               <Step active={this.props.step === 'languageStep'}>
                 <Icon name='language'/>
-                <StepContent>
-                  <StepTitle>Language</StepTitle>
-                </StepContent>
+                <Step.Content>
+                  <Step.Title>Language</Step.Title>
+                </Step.Content>
               </Step>
               <Step active={this.props.step === 'nameStep'}>
                 <Icon name='heading'/>
-                <StepContent>
-                  <StepTitle>Name</StepTitle>
-                </StepContent>
+                <Step.Content>
+                  <Step.Title>Name</Step.Title>
+                </Step.Content>
               </Step>
-            </StepGroup>
+            </Step.Group>
             <StyledForm>
               {stepComponent}
             </StyledForm>

@@ -5,7 +5,6 @@ import Button from 'semantic-ui-react/dist/commonjs/elements/Button';
 import Container from 'semantic-ui-react/dist/commonjs/elements/Container';
 import Header from 'semantic-ui-react/dist/commonjs/elements/Header';
 import Segment from 'semantic-ui-react/dist/commonjs/elements/Segment';
-import SegmentGroup from 'semantic-ui-react/dist/commonjs/elements/Segment/SegmentGroup';
 import {WidgetsListConnected} from '../widgets-list';
 import styled from 'styled-components';
 
@@ -22,7 +21,7 @@ class WidgetsPage extends React.Component {
     return (
       <StyledContainer text>
         <Header size='large' textAlign='center'>Widgets Page</Header>
-        <SegmentGroup>
+        <Segment.Group>
           <Segment textAlign='right'>
             <Button
               primary
@@ -34,7 +33,7 @@ class WidgetsPage extends React.Component {
           <Segment>
             <WidgetsListConnected />
           </Segment>
-        </SegmentGroup>
+        </Segment.Group>
       </StyledContainer>
     );
   }
