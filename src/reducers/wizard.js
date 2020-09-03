@@ -1,8 +1,5 @@
 import {actionTypes} from '../constants/action-types';
-
-const steps = ['languageStep', 'nameStep'];
-export const firstStep = steps.slice().shift();
-export const lastStep = steps.slice().pop();
+import {firstStep, steps} from '../constants/wizard-steps';
 
 const initialState = {
   step: firstStep,

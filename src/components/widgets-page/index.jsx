@@ -5,6 +5,7 @@ import Button from 'semantic-ui-react/dist/commonjs/elements/Button';
 import Container from 'semantic-ui-react/dist/commonjs/elements/Container';
 import Header from 'semantic-ui-react/dist/commonjs/elements/Header';
 import Segment from 'semantic-ui-react/dist/commonjs/elements/Segment';
+import {frontendPaths} from '../../constants/paths';
 import {WidgetsListConnected} from '../widgets-list';
 import styled from 'styled-components';
 
@@ -25,7 +26,7 @@ const HeadingWithButton = styled(Segment)`
 
 class WidgetsPage extends React.Component {
   onAddWidgetClick() {
-    this.props.push('/add');
+    this.props.push(frontendPaths.addWidget);
   }
 
   render() {

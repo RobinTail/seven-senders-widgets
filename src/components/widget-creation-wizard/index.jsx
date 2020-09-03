@@ -16,7 +16,8 @@ import {
   createPrevStepAction,
   createResetWizardAction, createSetWizardErrorsAction
 } from '../../actions/action-creators';
-import {firstStep, lastStep} from '../../reducers/wizard';
+import {frontendPaths} from '../../constants/paths';
+import {firstStep, languageStep, lastStep, nameStep} from '../../constants/wizard-steps';
 import {getLanguageCode, getName, getWizardStep} from '../../selectors/wizard';
 import {hasErrors, validateLanguageStep, validateNameStep} from '../../validations/wizard-validation';
 import {StepLanguageConnected} from './step-language';
@@ -52,10 +53,10 @@ const StyledForm = styled(Form)`
 class WidgetCreationWizard extends React.Component {
   validate(cbOnSuccess) {
     let errors;
-    if (this.props.step === 'languageStep') {
+    if (this.props.step === languageStep) {
       errors = validateLanguageStep(this.props.languageCode);
     }
-    if (this.props.step === 'nameStep') {
+    if (this.props.step === nameStep) {
       errors = validateNameStep(this.props.name);
     }
     this.props.setErrors(errors);
@@ -66,7 +67,7 @@ class WidgetCreationWizard extends React.Component {
 
   onCancelClick() {
     this.props.resetWizard();
-    this.props.push('/');
+    this.props.push(frontendPaths.root);
   }
 
   onPrevStepClick() {
@@ -85,7 +86,7 @@ class WidgetCreationWizard extends React.Component {
         this.props.name
       );
       this.props.resetWizard();
-      this.props.push('/');
+      this.props.push(frontendPaths.root);
     });
   }
 
@@ -96,26 +97,29 @@ class WidgetCreationWizard extends React.Component {
 
     let stepComponent;
     switch (this.props.step) {
-      case 'languageStep':
+      case languageStep:
         stepComponent = (<StepLanguageConnected/>);
         break;
-      default:
+      case nameStep:
         stepComponent = (<StepNameConnected/>);
+        break;
+      default:
+        stepComponent = null;
     }
 
     return (
       <PageWrapper>
-        <Header textAlign='center' size='large'>Add widget</Header>
+        <Header textAlign='center' size='large'>New Widget Wizard</Header>
         <Container text>
           <Segment>
             <Step.Group size='small' fluid>
-              <Step active={this.props.step === 'languageStep'}>
+              <Step active={this.props.step === languageStep}>
                 <Icon name='language'/>
                 <Step.Content>
                   <Step.Title>Language</Step.Title>
                 </Step.Content>
               </Step>
-              <Step active={this.props.step === 'nameStep'}>
+              <Step active={this.props.step === nameStep}>
                 <Icon name='heading'/>
                 <Step.Content>
                   <Step.Title>Name</Step.Title>
