@@ -8,5 +8,7 @@ export const actionTypes = keymirror({
   resetWizard: null,
   changeLanguageCode: null,
   changeName: null,
-  setWizardErrors: null
+  setWizardErrors: null,
+  openModal: null,
+  closeModal: null
 });

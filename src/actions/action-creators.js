@@ -52,3 +52,16 @@ export function createSetWizardErrorsAction(errors) {
     errors
   };
 }
+
+export function createOpenModalAction(cbOnConfirm) {
+  return {
+    type: actionTypes.openModal,
+    cbOnConfirm
+  };
+}
+
+export function createCloseModalAction() {
+  return {
+    type: actionTypes.closeModal
+  };
+}
