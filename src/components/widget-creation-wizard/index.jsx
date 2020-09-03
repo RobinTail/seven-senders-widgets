@@ -40,8 +40,12 @@ const StyledForm = styled(Form)`
   flex-flow: column nowrap;
   margin: 40px 0;
   
-  & > *:not(:first-child) {
-    margin-top: 20px;
+  & > .field {
+    margin-bottom: 40px !important;
+  }
+  
+  & .pointing {
+    position: absolute !important;
   }
 `;
 

@@ -22,6 +22,7 @@ class StepLanguage extends React.Component {
         }))}
         error={this.props.languageCodeError}
         onChange={this.onChange.bind(this)}
+        label='Select language'
         placeholder='Select language'
       />
     );

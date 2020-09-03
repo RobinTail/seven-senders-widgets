@@ -16,7 +16,8 @@ class StepName extends React.Component {
         value={this.props.name || ''}
         error={this.props.nameError}
         onChange={this.onChange.bind(this)}
-        placeholder='Specify widget name'
+        label='Widget name'
+        placeholder='Enter the widget name'
       />
     );
   }
