@@ -3,13 +3,9 @@ import {actionTypes} from '../constants/action-types';
 
 /**
  * {id, languageCode, name}
- * @todo: remove samples
  */
 const initialState = {
-  list: [
-    {id: 1, languageCode: 'en', name: 'test'},
-    {id: 2, languageCode: 'ru', name: 'test2'}
-  ]
+  list: []
 };
 
 export const widgetsReducer = localStorageDecorator(
