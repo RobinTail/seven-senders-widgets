@@ -12,6 +12,17 @@ const StyledContainer = styled(Container)`
   padding-top: 40px;
 `;
 
+const HeadingWithButton = styled(Segment)`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  
+  & > .header {
+    margin: 0 !important;
+  }
+`;
+
 class WidgetsPage extends React.Component {
   onAddWidgetClick() {
     this.props.push('/add');
@@ -20,16 +31,17 @@ class WidgetsPage extends React.Component {
   render() {
     return (
       <StyledContainer text>
-        <Header size='large' textAlign='center'>Widgets Page</Header>
+        <Header size='large' textAlign='center'>Widgets Overview</Header>
         <Segment.Group>
-          <Segment textAlign='right'>
+          <HeadingWithButton>
+            <Header>List of widgets</Header>
             <Button
               primary
               icon='plus'
               content='Add widget'
               onClick={this.onAddWidgetClick.bind(this)}
             />
-          </Segment>
+          </HeadingWithButton>
           <Segment>
             <WidgetsListConnected />
           </Segment>
